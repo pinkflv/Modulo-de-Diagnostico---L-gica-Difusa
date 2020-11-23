@@ -13,8 +13,18 @@ midb = mysql.connector.connect(
 cursor = midb.cursor(dictionary=True)
 
 
+@app.route("/")
+def index():
+    return render_template("saludo.html")
+
+
+@app.route("/llenado")
+def llenado():
+    return render_template("llenado.html")
+
+
 @app.route("/modelo")
-def home():
+def modelo():
     cursor.execute("SELECT * FROM enfermedades")
     enfermedades = cursor.fetchall()
     cursor.execute("SELECT * FROM sintoma")
@@ -22,8 +32,12 @@ def home():
     cursor.execute("SELECT * FROM intensidad")
     intensidad = cursor.fetchall()
     return render_template(
-        "index.html",
+        "modelo.html",
         enfermedades=enfermedades,
         sintomas=sintomas,
         intensidad=intensidad,
     )
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
