@@ -1,8 +1,10 @@
 {% extends 'index.html' %}
 {% block content %}
-<br>
-<h2 class="display-3 text-center">Formulario de predicción</h2>
-<br>
+<div  style="background-color: dodgerblue;"">
+    <br>
+        <h2 class="display-3 text-center">Formulario de predicción</h2>
+    <br>
+</div>
 <ul class="nav nav-tabs">
     <li class="nav-item">
       <a class="nav-link" href="/">Inicio</a>
@@ -14,29 +16,113 @@
       <a class="nav-link active" href="/llenado">Llenado de datos</a>
     </li>
 </ul>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-</button>
-  
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
+
+<form action="" method="post" style="margin-left: 10%; margin-right: 10%;" >
+    <!-- Tos -->
+    <div class="form-group" style="margin-top: 2%;" >
+        <label for="formControlRange">¿Qué tan fuerte es tu tos?</label>
+        <input name="o1" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+        <!-- onchange="document.getElementById('o1').value=value"> -->
     </div>
-</div>
+    <!-- Dificultad para respirar  -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o2" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Fiebre  -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o3" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Estornudos -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o4" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Dolor de garganta -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o5" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Dolor de cabeza -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o6" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Confusión  -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o7" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Fatiga -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o8" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Diarrea -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o9" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Dolor corporal -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o10" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Nausea/Vomito  -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o11" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Dolor de pecho -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o12" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Sangre en el esputo -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o13" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Salibalencias -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o14" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Perdida de peso sin razon aparente -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o15" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Coloracion azulada en la piel -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o16" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Problemas para dormir -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o17" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!-- Congestion/goteo nasal -->
+    <div class="form-group" style="margin-top: 2%;">
+        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <input name="o18" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
+    </div>
+    <!--     
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+        <label class="form-check-label" for="inlineRadio1">1</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+        <label class="form-check-label" for="inlineRadio2">2</label>
+    </div> -->
+    <br><br>
+    <div style="margin-bottom: 10%;">
+        <input type="submit" value="Almacenar datos">
+    </div>
+    
+</form>
+
 {% endblock %}
