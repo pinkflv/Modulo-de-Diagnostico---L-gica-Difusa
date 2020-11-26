@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+{% block content %}
+<div  style="background-color: dodgerblue;"">
+    <br>
+        <h2 class="display-3 text-center">Formulario de predicción</h2>
+    <br>
+</div>    
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="/modelo">Modelo</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/eleccion">Llenado de datos</a>
+    </li>
+</ul>
+<div  style="background-color: dodgerblue;">
+    <br>
+        <h2 class="display-5 text-center">Selecciona el tipo de diagnóstico que deseas recibir</h2>
+    <br>
+</div>
+<div style="margin-top: 2%; margin-left: 4%; margin-right: 4%;">
+    <a href="/llenado"><button type="button" class="btn btn-primary btn-lg btn-block">Diagnóstico General</button></a>
+    <br>
+    <a href="/llenadoEspecifico"><button type="button" class="btn btn-secondary btn-lg btn-block">Diagnóstico Especifico</button></a>
+</div>
+
+
+{% endblock %}
