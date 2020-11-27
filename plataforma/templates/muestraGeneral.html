@@ -1,0 +1,34 @@
+{% extends 'muestra.html' %}
+{% block mC %}
+<table class="table table-dark" >
+    <thead>
+      <tr>
+        <td></td>
+        {% for x in range(1, 19): %}
+            <td>{{x}}</td>
+        {% endfor %}
+        <td>Sumatoria</td>
+      </tr>
+    </thead>
+    <tbody>
+        {% for x in range(10): %}
+        <tr>
+            <td>{{x+1}}</td>
+            {% for y in range(18): %}    
+                {% if x == vef-1: %}
+                    <td style="background-color: gray;">{{ comparado[x][y] }}</td>
+                {% else: %}
+                    <td >{{ comparado[x][y] }}</td>
+                {% endif %}
+            {% endfor %}
+            {% if x == vef-1: %}
+                <td style="background-color: gray;">{{s[x]}}</td>
+            {% else: %}
+                <td>{{s[x]}}</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

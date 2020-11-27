@@ -13,7 +13,7 @@
       <a class="nav-link active" href="/modelo">Modelo</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="/eleccion">Llenado de datos</a>
+        <a class="nav-link" href="/eleccion">Llenado de datos</a>
     </li>
 </ul>
 <div  style="background-color: dodgerblue;">
@@ -45,7 +45,6 @@
         </div style="margin-left: 4%;">
         <div class="col-4">
             <ul class="list-group list-group-horizontal">
-                
                 <ul class="list-group">
                     <li class="list-group-item" style="background-color: slategrey;">Enfermedades</li>
                     {% for enfermedad in enfermedades: %}
@@ -53,7 +52,7 @@
                     {% endfor %}
                 </ul>
                 <ul class="list-group" style="margin-bottom: 4%;">
-                    <li class="list-group-item bg-primary">Sintomas</li>
+                    <li class="list-group-item bg-primary">sintomas</li>
                     {% for sintoma in sintomas: %}
                         <li class="list-group-item">{{ sintoma.idSintoma }}.- {{ sintoma.nombre }}</li>
                     {% endfor %}

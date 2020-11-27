@@ -1,8 +1,8 @@
 {% extends 'index.html' %}
 {% block content %}
-<div  style="background-color: dodgerblue;"">
+<div  style="background-color: dodgerblue;">
     <br>
-        <h2 class="display-3 text-center">Diagnostico</h2>
+        <h2 class="display-3 text-center">Diagnóstico</h2>
     <br>
 </div>
 <ul class="nav nav-tabs">
@@ -16,7 +16,6 @@
       <a class="nav-link" href="/eleccion">Llenado de datos</a>
     </li>
 </ul>
-<br>
 <div>
     <div  style="background-color: dodgerblue;">
         <br>
@@ -25,44 +24,525 @@
     </div>
 
     {% if contador > 12: %}
-        <div style="margin-bottom: 2%;">
-            <h2 class="display-5 text-center">No parece que tengas algun problema, si llegas a tener más sintomas vuelve a consultar</h2>
+        <!-- Si no tiene almenos 6 síntomas se mostrará lo siguiente -->
+        <div style="margin-bottom: 2%; margin-top: 2%;">
+            <h2 class="display-5 text-center">No parece que tengas algun problema, si llegas a tener más síntomas vuelve a consultar</h2>
         </div>    
     {% else %}
-        <div style="margin-bottom: 2%;">
-            <h2 class="display-5 text-center">Tu diagnostico resultó ser: {{ ef }}</h2>
+        <!-- Aqui se muestra la enfermedad con mayor cercania -->
+        <div style="margin-bottom: 2%; margin-top: 2%;">
+            <h2 class="display-5 text-center" style="font-style: oblique;">Tu diagnóstico resultó ser: {{ ef }}</h2>
         </div>
-        <div style="margin-bottom: 2%;">
-            <h2 class="display-5 text-center">{{ ddef }}</h2>
-        </div>  
+        <!-- Recomendaciones para cada enfermedad  -->
+        <!-- Recomendaciones para resfriado común -->
+        {% if vef == 1: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    Aunque muchos tipos de virus pueden causar un resfriado común, los rinovirus son los culpables más comunes.
+                    Un virus del resfriado entra en el cuerpo a través de la boca, los ojos o la nariz. El virus puede propagarse a través de gotitas en el aire cuando alguien que está enfermo tose, estornuda o habla.
+                    También se propaga por contacto mano a mano con alguien que tiene un resfriado o al compartir objetos contaminados, como utensilios, toallas, juguetes o teléfonos. Si te tocas los ojos, la nariz o la boca después de tal contacto o exposición, es probable que contraigas un resfriado.
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    No hay cura para el resfriado común. Los antibióticos no son útiles contra los virus del resfriado y no deben utilizarse a menos que haya una infección bacteriana. El tratamiento está dirigido a aliviar los signos y síntomas con el uso de los siguientes medicamentos:
+                    <br> - Analgésicos: Para aliviar la fiebre, el dolor de garganta y el dolor de cabeza, muchas personas recurren al paracetamol u otros analgésicos leves. Toma paracetamol por el menor tiempo posible y sigue las indicaciones de la etiqueta para evitar los efectos secundarios.
+                    <br> - Aerosoles nasales descongestionantes: Los adultos pueden usar gotas o aerosoles descongestionantes hasta por cinco días. El uso prolongado puede causar un efecto rebote. 
+                    <br> - Jarabes para la tos.
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para asma -->
+        {% if vef == 2: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#medicamento" style="color:whitesmoke;">Medicamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#medicamento" style="color:whitesmoke;">Medicamento prolongado</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#medicamento" style="color:whitesmoke;">Medicamento rápido</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    Aunque muchos tipos de virus pueden causar un resfriado común, los rinovirus son los culpables más comunes.
+                    Un virus del resfriado entra en el cuerpo a través de la boca, los ojos o la nariz. El virus puede propagarse a través de gotitas en el aire cuando alguien que está enfermo tose, estornuda o habla.
+                    También se propaga por contacto mano a mano con alguien que tiene un resfriado o al compartir objetos contaminados, como utensilios, toallas, juguetes o teléfonos. Si te tocas los ojos, la nariz o la boca después de tal contacto o exposición, es probable que contraigas un resfriado.
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    Los objetivos del tratamiento son: 
+                    <br> - Controlar la inflamación de las vías respiratorias
+                    <br> - Limitar la exposición a sustancias que puedan desencadenar los síntomas
+                    <br> - Ayudarle a que pueda realizar las actividades normales sin tener síntomas de asma 
+                    Usted y su proveedor deben colaborar en equipo para manejar sus síntomas de asma. Siga las instrucciones de su proveedor con respecto a tomar los medicamentos, eliminar los desencadenantes del asma y vigilar los síntomas.
+                </p>
+                <h4 id="medicamento" class="display-5" style="font-style: oblique;">Medicamentos</h4>
+                <p>
+                    Existen dos clases de medicamentos para el tratamiento del asma:
+                    <br> - Medicamentos de control para ayudar a prevenir ataques
+                    <br> - Medicamentos de alivio rápido (rescate) para uso durante los ataques
+                </p>
+                <h4 id="mp" class="display-5" style="font-style: oblique;">Medicamento prolongado</h4>
+                <p>
+                    También se denominan medicamentos de mantenimiento o de control. Se utilizan para prevenir los síntomas en personas con asma de moderada a grave. Usted debe tomarlos todos los días para que hagan efecto. Tómelos incluso cuando se sienta BIEN.
+                    Algunos medicamentos de acción prolongada se aspiran (inhalan) como los esteroides y los betaagonistas de acción prolongada. Otros se toman por la boca (vía oral). Su proveedor le recetará el medicamento apropiado.
+                </p>
+                <h4 id="mr" class="display-5" style="font-style: oblique;">Medicamento rápido</h4>
+                <p>
+                    También se denominan medicamentos de rescate. Ellos se toman:
+                    <br> - Cuando está tosiendo, jadeando, teniendo problemas para respirar o durante un ataque de asma
+                    <br> - Justo antes de la actividad física para ayudar a prevenir síntomas de asma 
+                    Coméntele a su proveedor si usted está usando medicamentos de alivio rápido dos veces por semana o más. Si este es el caso, es posible que el asma no esté controlada. Su proveedor puede cambiar la dosis o su medicamento de control del asma diario.
+                    Los medicamentos de alivio rápido incluyen:
+                    <br> - Broncodilatadores de acción corta (inhaladores)
+                    <br> - Corticoesteroides orales para un ataque de asma grave
+                    Un ataque de asma grave requiere un chequeo médico. Usted también puede necesitar hospitalización. Allí, probablemente le administrarán oxígeno, asistencia respiratoria y medicamentos intravenosos (IV).
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Influenza estacional -->
+        {% if vef == 3: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    Los virus de la gripe son muy contagiosos. La mayoría de las personas se contagian de la gripe al respirar aire que contiene el virus. Estas son las causas más habituales:
+                    <br> - Cuando las personas con gripe tosen o estornudan, lo que propaga el virus por el aire en pequeñas gotas.
+                    <br> - También se puede contraer la gripe por contacto directo con alguien que la tiene, por ejemplo, al darle la mano o al tocar algo que haya tocado recientemente. Usted transporta el virus de la gripe en las manos y luego, cuando se toca la nariz o la boca, lo transmite a su persona.
+                    Usted es contagioso y puede transmitir el virus a otras personas desde el inicio de los síntomas, y durante los cinco días posteriores. Los niños son contagiosos durante más tiempo.
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    No existe cura para la influenza o gripe. Sin embargo, hay cosas que usted puede hacer para sentirse más cómodo, entre ellas están las siguientes.
+                    <br> - Beber suficientes líquidos para prevenir la deshidratación; de seis a ocho vasos al día.
+                    <br> - Hacer inhalaciones de vapor con mentol, atomizaciones nasales o aplicarse gotas de agua salada pueden ser de ayuda.
+                    <br> - Las frotaciones con cremas descongestionantes pueden ayudar a aliviar los síntomas en los niños.
+                    <br> - Tomar bebidas calientes (especialmente con limón), sopas calientes o alimentos picantes pueden ayudar a aliviar la irritación y dolor en la garganta y a reducir la congestión.
+                    <br> - Chupar caramelos o pastillas que contengan mentol o eucalipto ayuda a calmar su garganta.
+                    <br> - Hacer gárgaras con agua salada ayuda a aliviar el dolor de garganta.
+                    <br> - Descansar; podría tener que dejar de trabajar o ir a la escuela hasta por una semana.
+                    También se pueden tomar algunos medicamentos para aliviar los síntomas:
+                    <br> - Analgésicos.
+                    <br> - Aerosoles nasales descongestionantes. 
+                    <br> - Jarabes para la tos.
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Neumonía -->
+        {% if vef == 4: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                     - El tipo más común de bacteria es el Streptococcus pneumoniae (neumococo).
+                    <br> - Un hongo, denominado Pneumocystis jiroveci, puede causar neumonía en personas cuyos sistemas inmunitarios no funcionan correctamente, especialmente personas con una infección avanzada por VIH.
+                    <br> - Los virus, como el de la gripe también son una causa común de neumonía.
+                    <br> - Fumar cigarrillos
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    El médico debe decidir primero si usted necesita o no estar en el hospital. Si a usted le brindan tratamiento en el hospital, recibirá:
+                    <br> - Líquidos y antibióticos por vía intravenosa
+                    <br> - Oxigenoterapia
+                    <br> - Tratamientos respiratorios (posiblemente) 
+                    Si le diagnostican una neumonía bacteriana, es muy importante que los antibióticos se empiecen poco después de ingresar al hospital. Si usted tiene una neumonía viral, no recibirá antibióticos. 
+                    En caso de tratamiento en casa, el médico puede pedirle que tome antibióticos.
+                    Al tomar antibióticos:
+                    <br> - NO pase por alto ninguna dosis. Tome el medicamento hasta que se acabe, aun cuando usted empiece a sentirse mejor.
+                    <br> - NO tome antitusígenos ni medicamentos para el resfriado a menos que el médico lo autorice. La tos ayuda al cuerpo a librarse de la flema de los pulmones. 
+                    Respirar aire caliente y húmedo ayuda a aflojar el moco pegajoso que puede hacerlo sentir como si se estuviera ahogando. Estas medidas pueden ayudar:
+                    <br> - Póngase un pedazo de tela caliente y húmeda sobre nariz y boca sin hacer presión.
+                    <br> - Llene un humidificador con agua caliente e inhale el vapor caliente.
+                    <br> - Tome un par de respiraciones profundas 2 o 3 veces cada hora. Las respiraciones profundas le ayudarán a abrir los pulmones.
+                    <br> - Dese golpecitos suavemente en el pecho unas cuantas veces al día, mientras está acostado con la cabeza más baja que el pecho. Esto le ayuda a sacar la flema de los pulmones para que usted la pueda expectorar. 
+                    <br> - Tome bastantes líquidos, siempre y cuando su médico lo autorice.
+                    <br> - Beba agua, jugo o té claro
+                    <br> - Beba al menos de 6 a 10 tazas (1.5 a 2.5 litros) por día
+                    <br> - NO tome alcohol 
+                    <br>Descanse mucho cuando se vaya a su casa. Si tiene problemas para dormir por la noche, haga siestas durante el día.
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Covid-19 -->
+        {% if vef == 5: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    La infección con el nuevo coronavirus (síndrome respiratorio agudo grave coronavirus 2, o SARS-CoV-2), causa la enfermedad por coronavirus 2019 (COVID-19).
+                    El virus que causa la COVID-19 se trasmite fácilmente entre las personas, y, con el paso del tiempo, se continúa descubriendo más sobre cómo se propaga. Los datos muestran que principalmente se contagia de persona a persona entre aquellos que están en contacto cercano (dentro de aproximadamente 6 pies, o 2 metros). El virus se trasmite por gotitas respiratorias que se liberan cuando alguien que tiene el virus tose, estornuda o habla. Una persona que está cerca puede inhalar estas gotitas, o las gotitas pueden caerle en la boca, los ojos, o la nariz.
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    En este momento hay solo un medicamento aprobado para tratar la COVID-19. No hay disponible ninguna cura para la COVID-19. Los antibióticos no son eficaces contra las infecciones virales como la COVID-19. Los investigadores están probando una variedad de posibles tratamientos.
+                    La atención médica complementaria apunta a aliviar los síntomas y puede incluir:
+                    <br> - Analgésicos (ibuprofeno o acetaminofén)
+                    <br> - Jarabe o medicamentos para la tos
+                    <br> - Reposo
+                    <br> - Ingesta de líquidos
+                    Es probable que el médico te recomiende que permanezcas en aislamiento en casa durante un período de tiempo, excepto para recibir atención médica. Es probable que el médico te haga un seguimiento regular. Sigue las pautas del médico y del departamento de salud local sobre cuándo puedes terminar con el aislamiento en casa.
+                    Si estás muy enfermo, es posible que debas recibir tratamiento en el hospital.
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Cáncer de pulmón -->
+        {% if vef == 6: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cnp" style="color:whitesmoke;">Células no pequeñas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    El cáncer de pulmón puede afectar a cualquier persona, pero algunos factores aumentan el riesgo de tenerlo:
+                    <br> - Fumar
+                    <br> - Humo de segunda mano
+                    <br> - Antecedentes familiares de cáncer de pulmón
+                    <br> - Estar expuesto al asbesto, arsénico, cromo, berilio, níquel, hollín o alquitrán en el lugar de trabajo
+                    <br> - Estar expuesto a la radiación, como:
+                    <br> - Radioterapia en el seno o el tórax
+                    <br> - Radón en el hogar o lugar de trabajo
+                    <br> - Ciertas pruebas de imagen como tomografías computarizadas
+                    <br> - Infección por VIH
+                    <br> - Contaminación del aire
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    Para la mayoría de los pacientes con cáncer de pulmón, los tratamientos actuales no curan el cáncer.
+                    Su tratamiento dependerá del tipo de cáncer de pulmón que tenga, hasta qué punto se ha propagado, su salud general y otros factores. Puede recibir más de un tipo de tratamiento.
+                    Los tratamientos para el cáncer de pulmón de células pequeñas incluyen:
+                    <br> - Cirugía
+                    <br> - Quimioterapia
+                    <br> - Radioterapia
+                    <br> - Inmunoterapia
+                    <br> - Terapia con láser, que utiliza un rayo láser para eliminar las células cancerosas
+                    <br> - Colocación de stent endoscópico: Un endoscopio es un instrumento delgado en forma de tubo que se usa para observar tejidos dentro del cuerpo. Se puede usar para colocar un dispositivo llamado stent. El stent ayuda a abrir una vía aérea que ha sido bloqueada por tejido anormal
+                </p>
+                <h4 id="cnp" class="display-5" style="font-style: oblique;">Los tratamientos para el cáncer de pulmón de células no pequeñas incluyen:</h4>
+                <p>
+                    - Cirugía
+                    <br> - Radioterapia
+                    <br> - Quimioterapia
+                    <br> - Terapia dirigida: Utiliza medicamentos u otras sustancias que atacan células cancerosas específicas con menor daño a las células normales
+                    <br> - Inmunoterapia
+                    <br> - Terapia con láser
+                    <br> - Terapia fotodinámica: Utiliza un medicamento y un cierto tipo de luz láser para eliminar las células cancerosas
+                    <br> - Criocirugía: Utiliza un instrumento para congelar y destruir tejido anormal
+                    <br> - Electrocauterización: Tratamiento que utiliza una sonda o aguja calentada por una corriente eléctrica para destruir tejido anormal
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Faringitis -->
+        {% if vef == 7: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    La mayoría de los dolores de garganta vienen provocados por virus que provocan resfriados comunes o por el virus de la gripe. En un menor número de casos, el dolor viene causado por infecciones bacterianas.
+                    Las enfermedades virales que causan dolor de garganta son:
+                    <br> - El resfriado común.
+                    <br> - La gripe.
+                    <br> - Mononucleosis: infección viral que causa fiebre, dolor de garganta e inflamación de los ganglios linfáticos.
+                    <br> - Sarampión: enfermedad muy contagiosa causada por un virus.
+                    <br> - Varicela.
+                    Las enfermedades bacterianas que provocan dolor de garganta pueden ser:
+                    <br> - Faringitis estreptocócica: causada por una bacteria denominada Streptococcus pyogenes o estreptococos del grupo A.
+                    <br> - Tos ferina: infección del tracto respiratorio muy contagiosa.
+                    <br> - Difteria: infección aguda provocada por una bacteria denominada Corynebacterium diphtheriae.
+                    Otras causas del dolor de garganta pueden ser:
+                    <br> - Alergias
+                    <br> - Sequedad.
+                    <br> - Elementos irritantes que se encuentran en el aire contaminado.
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    Si el dolor de garganta está causado por una infección bacteriana, el especialista suele recetar un tratamiento con antibióticos. De este tipo de medicamentos el más comúnmente administrado es la penicilina (penicilina G, penicilina benzatina o amoxicilina) por vía oral durante 10 días. En caso de padecer alergia a este antibiótico, se suele recetar uno alternativo.
+                    El paciente deberá completar el tratamiento antibiótico para que resulte efectivo, según las indicaciones del especialista. Si no, se puede producir un empeoramiento o que la infección se extienda a las regiones colindantes.                    
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Efisema pulmonar -->
+        {% if vef == 8: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#medicamentos" style="color:whitesmoke;">Medicamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#terapia" style="color:whitesmoke;">Terapias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cirugia" style="color:whitesmoke;">Cirugía</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    El enfisema es generalmente causado por fumar o por la exposición a largo plazo a ciertos contaminantes industriales o al polvo.
+                    Un pequeño porcentaje de los casos son causados por una deficiencia genética o trastorno familiar, la alfa-1-antitripsina.
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    El enfisema no se puede curar, pero los tratamientos pueden ayudar a aliviar los síntomas y retrasar la progresión de la enfermedad.
+                    Dejar de fumar de inmediato y evitar otros contaminantes del aire por completo es el tratamiento más eficaz para la EPOC y enfisema.    
+                </p>
+                <h4 id="medicamentos" class="display-5" style="font-style: oblique;">Medicamentos</h4>
+                <p>
+                    Dependiendo de la severidad de sus síntomas, su médico podría sugerir:
+                    <br> - Broncodilatadores. Estos medicamentos pueden ayudar a aliviar la tos, falta de aliento y problemas de respiración relajando las vías respiratorias constreñidas, pero no son tan efectivos para tratar el enfisema como lo son en el tratamiento del asma o la bronquitis crónica.
+                    <br> - Los esteroides inhalados. Los corticosteroides inhalados en aerosoles pueden ayudar a aliviar la falta de aliento.
+                    <br> - El uso prolongado puede debilitar los huesos y aumentar el riesgo de presión arterial alta, las cataratas y la diabetes.
+                    <br> - Antibióticos. Si desarrolla una infección bacteriana, como en la bronquitis aguda o neumonía, los antibióticos deben ser indicados.
+                </p>
+                <h4 id="terapia" class="display-5" style="font-style: oblique;">Terapia</h4>
+                <p>
+                     - Rehabilitación pulmonar
+                    <br> - Terapia nutricional
+                    <br> - Oxígeno suplementario
+                </p>
+                <h4 id="cirugia" class="display-5" style="font-style: oblique;">Cirugía</h4>
+                <p>
+                    Dependiendo de la gravedad de su enfisema, su médico puede sugerir uno o más tipos diferentes de cirugía, incluyendo:
+                    <br> - La cirugía de reducción de volumen pulmonar
+                    <br> - Trasplante de pulmón                    
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Fibrosis pulmonar -->
+        {% if vef == 7: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#medicamento" style="color:whitesmoke;">Medicamento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    El daño puede deberse a muchos factores diferentes, incluidos la exposición por un largo plazo a determinadas toxinas, ciertos trastornos médicos, radioterapia y algunos medicamentos.
+                    Factores ocupacionales y ambientales
+                    La exposición por un largo plazo a ciertas toxinas y contaminantes puede dañar tus pulmones. Tales factores incluyen los siguientes:
+                    <br> - Harina de sílice
+                    <br> - Fibras de asbesto
+                    <br> - Polvo de metales duros
+                    <br> - Polvo de carbón
+                    <br> - Polvo de granos
+                    <br> - Excremento de pájaros y animales
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    No existe una cura. El tratamiento se enfoca en aliviar los síntomas y disminuir el avance de la enfermedad:
+                    <br> - Pirfenidona (Esbriet) y nintedanib (Ofev) son dos medicamentos que han sido aprobados para tratar la FPI. Pueden ayudar a hacer que el daño al pulmón sea más lento.
+                    <br> - Las personas con niveles bajos de oxígeno en la sangre necesitarán apoyo con oxígeno en casa.
+                    <br> - La rehabilitación pulmonar no curará la enfermedad, pero puede ayudar a las personas a hacer ejercicio con una menor dificultad respiratoria.
+                    Hacer cambios en el estilo de vida y en el hogar puede ayudar a manejar los síntomas respiratorios. Si usted o cualquier miembro de la familia fuma, ahora es el momento para dejar de hacerlo.
+                    Se puede considerar un trasplante pulmonar para algunas personas con FPI avanzada.
+                </p>
+                <h4 id="medicamento" class="display-5" style="font-style: oblique;">Medicamento</h4>
+                <p>
+                    Muchos medicamentos pueden dañar tus pulmones, sobre todo medicamentos como los siguientes:
+                    <br> - Medicamentos para quimioterapia. 
+                    <br> - Medicamentos para el corazón. 
+                    <br> - Algunos antibióticos. 
+                    <br> - Medicamentos antiinflamatorios.
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
+        <!-- Recomendaciones para Bronquitis -->
+        {% if vef == 10: %}
+        <div style="margin-left: 2%; margin-bottom: 2%; margin-right: 2%;">
+            <nav id="navbar-example2" class="navbar navbar-light" style="background-color: gray; border-radius: 5px;">
+                <h5 class="navbar-brand">Datos a tomar en cuenta</h5>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#origen" style="color:whitesmoke;">Origen</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tr" style="color:whitesmoke;">Tratamiento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#medicamentos" style="color:whitesmoke;">Medicamentos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#terapia" style="color:whitesmoke;">Terapias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tabla" style="color:whitesmoke;">Tabla</a>
+                    </li>
+                </ul>
+            </nav>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0" style="padding: 1%;">
+                <h4 id="origen" class="display-5" style="font-style: oblique;">Origen</h4>
+                <p>
+                    Por lo general, la bronquitis aguda es causada por virus, generalmente los mismos virus que causan los resfríos y la gripe (influenza). Los antibióticos no matan los virus, por lo que este tipo de medicamentos no resulta útil en la mayoría de los casos de bronquitis.
+                    La causa más frecuente de la bronquitis crónica es fumar cigarrillos. La contaminación del aire y el polvo o los gases tóxicos en el medio ambiente o en el lugar de trabajo también pueden contribuir al desarrollo de la enfermedad.
+                </p>
+                <h4 id="tr" class="display-5" style="font-style: oblique;">Tratamiento recomendado</h4>
+                <p>
+                    La mayoría de los casos de bronquitis aguda mejoran sin tratamiento, generalmente después de un par de semanas.
+                </p>
+                <h4 id="medicamentos" class="display-5" style="font-style: oblique;">Medicamentos</h4>
+                <p>
+                    Dado que la mayoría de los casos de bronquitis son causados por infecciones virales, los antibióticos no resultan eficaces. Sin embargo, si el médico sospecha que tienes una infección bacteriana, es posible que te recete un antibiótico.
+                    En algunos casos, el médico puede recomendarte otros medicamentos, entre los que se incluyen los siguientes:
+                    <br> - Medicamento para la tos: Si la tos no te deja dormir, puedes probar con inhibidores de la tos a la hora de dormir.
+                    <br> - Otros medicamentos: Si tienes alergias, asma o enfermedad pulmonar obstructiva crónica (EPOC), el médico puede recomendarte un inhalador y otros medicamentos para disminuir la inflamación y abrir las vías estrechadas de tus pulmones.
+                </p>
+                <h4 id="terapia" class="display-5" style="font-style: oblique;">Terapia</h4>
+                <p>
+                    Si tienes bronquitis crónica, la rehabilitación pulmonar puede ayudarte (programa de ejercicios respiratorios en el que un terapeuta de la respiración te enseña a respirar con más facilidad y a aumentar tu capacidad para hacer ejercicio).
+                </p>
+                <h4 id="tabla" class="display-5" style="font-style: oblique;">Tabla de resultados</h4>
+            </div>
+        </div> 
+        {% endif %}
     {% endif %}
-    <table class="table table-dark">
-        <thead>
-          <tr>
-            <td></td>
-            {% for x in range(1, 19): %}
-                <td>{{x}}</td>
-            {% endfor %}
-            <td>Sumatoria</td>
-          </tr>
-        </thead>
-        <tbody>
-            {% for x in range(10): %}    
-            <tr>
-                <td>{{x+1}}</td>
-                {% for y in range(18): %}    
-                    {% if x == vef-1: %}
-                        <td style="background-color: gray;">{{ comparado[x][y] }}</td>
-                    {% else: %}
-                        <td >{{ comparado[x][y] }}</td>
-                    {% endif %}
-                {% endfor %}
-                <td>{{s[x]}}</td>
-            </tr>    
-            {% endfor %}
-          
-        </tbody>
-      </table>     
+    {% block mC %}{% endblock %}
+     
 </div>
 
 {% endblock %}

@@ -1,0 +1,75 @@
+{% extends 'index.html' %}
+{% block content %}
+<div  style="background-color: dodgerblue;">
+    <br>
+        <h2 class="display-3 text-center">Formulario de predicción especifico</h2>
+    <br>
+</div>
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" href="/">Inicio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/modelo">Modelo</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/eleccion">Llenado de datos</a>
+    </li>
+</ul>
+<div  style="background-color: dodgerblue;">
+    <br>
+        <h2 class="display-5 text-center">Elige las enfermedades con las cuales deseas comparar tu cuadro de sintomas</h2>
+    <br>
+</div>
+<br>
+<form action="" method="post" >
+    <div class="col-4" style="margin-left: 35%; margin-right: 10%; width: 80%;" >
+        <ul class="list-group list-group-horizontal" style="width: 100%;">
+            <ul class="list-group" style="width: 50%;">
+                <li class="list-group-item" style="background-color: slategrey;">Enfermedades</li>
+                {% for enfermedad in enf: %}
+                    <li class="list-group-item">{{ enfermedad.idEnfermedades }}.- {{ enfermedad.nombre }}</li>
+                {% endfor %}
+            </ul>
+            <ul class="list-group" style="width: 50%;">
+                <li class="list-group-item bg-primary">Eleccion</li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static" style="margin-left: 45%;" type="checkbox" id="enfermedad1"  name="enfermedad1"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static" style="margin-left: 45%;"  type="checkbox" id="enfermedad2"  name="enfermedad2"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad3"  name="enfermedad3"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad4"  name="enfermedad4"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad5"  name="enfermedad5"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad6"  name="enfermedad6"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad7"  name="enfermedad7"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad8"  name="enfermedad8"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad9"  name="enfermedad9"  >
+                </li>
+                <li class="list-group-item">
+                    <input class="form-check-input position-static"  style="margin-left: 45%;" type="checkbox" id="enfermedad10"  name="enfermedad10"  >
+                </li>
+            </ul>
+        </ul>
+    </div>
+    <div style="margin-top: 2%; margin-left: 4%; margin-right: 4%; margin-bottom: 10%;">
+        <button type="submit"  value="Almacenar datos" class="btn btn-primary btn-lg btn-block">Elegir enfermedades</button>
+    </div>
+    
+</form>
+
+{% endblock %}

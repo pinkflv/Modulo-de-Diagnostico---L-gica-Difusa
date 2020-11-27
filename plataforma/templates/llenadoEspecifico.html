@@ -1,6 +1,6 @@
 {% extends 'index.html' %}
 {% block content %}
-<div  style="background-color: dodgerblue;"">
+<div  style="background-color: dodgerblue;">
     <br>
         <h2 class="display-3 text-center">Formulario de predicción especifico</h2>
     <br>
@@ -18,18 +18,21 @@
 </ul>
 <div  style="background-color: dodgerblue;">
     <br>
-        <h2 class="display-5 text-center">Procura contestar lo más acertado posible</h2>
+        <h2 class="display-5 text-center">Procura contestar lo más acertado posible, dependiendo de la intensidad de tu síntoma</h2>
     <br>
 </div>
-<div>
-    <h2>más </h2>
-</div>
-<form action="" method="post" style="margin-left: 10%; margin-right: 10%;" >
+<form action="" method="post" style="margin-left: 10%; margin-right: 10%;" >   
+    <div class="progress" style="margin-top: 2%; height: 30px;">
+        <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">Nulo</div>
+        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Leve</div>
+        <div class="progress-bar bg-info" role="progressbar" style="width: 25%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">Medio</div>
+        <div class="progress-bar bg-warning" role="progressbar" style="width: 25%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Fuerte</div>
+        <div class="progress-bar bg-danger" role="progressbar" style="width: 25%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">Intenso</div>
+    </div>
     <!-- Tos -->
     <div class="form-group" style="margin-top: 2%;" >
         <label for="formControlRange">¿Qué tan fuerte es tu tos?</label>
         <input name="o1" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
-        <!-- onchange="document.getElementById('o1').value=value"> -->
     </div>
     <!-- Dificultad para respirar  -->
     <div class="form-group" style="margin-top: 2%;">
@@ -38,87 +41,88 @@
     </div>
     <!-- Fiebre  -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Qué tan intensa es tu fiebre?</label>
         <input name="o3" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Estornudos -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Tienes estornudos constantes?</label>
         <input name="o4" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Dolor de garganta -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Qué tan intenso es tu dolor de garganta?</label>
         <input name="o5" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Dolor de cabeza -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Qué tan intenso es tu dolor de cabeza?</label>
         <input name="o6" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Confusión  -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Tienes algún grado de confusión?</label>
         <input name="o7" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Fatiga -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Sientes fatiga?</label>
         <input name="o8" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Diarrea -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Has tenido diarrea?</label>
         <input name="o9" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Dolor corporal -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">Describe tu dolor corporal</label>
         <input name="o10" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Nausea/Vomito  -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Posees nauseas o vomito?</label>
         <input name="o11" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Dolor de pecho -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Sientes dolor de pecho?</label>
         <input name="o12" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Sangre en el esputo -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Has llegado a tener sangrado en el esputo?</label>
         <input name="o13" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
-    <!-- Salibalencias -->
+    <!-- Sibilancias -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Tienes sibilancias?</label>
         <input name="o14" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Perdida de peso sin razon aparente -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">Perdida de peso sin razón</label>
         <input name="o15" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
-    <!-- Coloracion azulada en la piel -->
+    <!-- Coloración azulada en la piel -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Has tenido coloración azulada en la piel?</label>
         <input name="o16" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Problemas para dormir -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Problemas para dormir?</label>
         <input name="o17" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <!-- Congestion/goteo nasal -->
     <div class="form-group" style="margin-top: 2%;">
-        <label for="formControlRange">Llena la barra indicando que tan dificil es para ti respirar</label>
+        <label for="formControlRange">¿Congestión nasal?</label>
         <input name="o18" type="range" class="form-control-range" id="formControlRange" min="0" max="1" value="0" step="0.1">
     </div>
     <br><br>
+    
     <div style="margin-top: 2%; margin-left: 4%; margin-right: 4%; margin-bottom: 10%;">
-        <button type="submit"  value="Almacenar datos" class="btn btn-primary btn-lg btn-block">Diagnóstico General</button>
+        <button type="submit"  value="Almacenar datos" class="btn btn-primary btn-lg btn-block">Generar Diagnóstico</button>
     </div>
     
 </form>
