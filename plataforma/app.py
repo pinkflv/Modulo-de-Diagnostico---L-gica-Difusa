@@ -350,8 +350,9 @@ def muestraEspecifica():
 
         for i in range(18):
             var = min(l1[i], l2[i])
-            comparado[x][i] = float(var)
-            s[x] += np.around(float(comparado[x][i]), 2)
+            if var != 0:
+                comparado[x][i] = float(var)
+                s[x] += np.around(float(comparado[x][i]), 2)
 
     mostrables = []
     for x in range(len(enfermedades)):
@@ -361,18 +362,28 @@ def muestraEspecifica():
             mostrables.append(vef)
             ef = enfermedades[x]["nombre"]
 
+    s2 = []
+    for x in range(10):
+        if s[x] > 0.1:
+            s2.append(s[x])
+    compara2 = np.zeros((len(s2), 18))
+    for x in range(len(s2)):
+        compara2[x] = comparado[x]
+
+    print(compara2)
+    print(s2)
     contador = 0
-    for val in cuadro:
-        if val["registro"] == 0:
-            contador += 1
+    for x in range(len(s2)):
+        contador += 1
+    print(contador)
 
     return render_template(
         "muestraEspecifica.html",
         cuadro=cuadro,
-        s=s,
+        s2=s2,
         ef=ef,
         vef=vef,
-        comparado=comparado,
+        compara2=compara2,
         contador=contador,
         mostrables=mostrables,
     )

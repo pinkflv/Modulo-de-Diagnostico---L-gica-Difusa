@@ -11,22 +11,22 @@
       </tr>
     </thead>
     <tbody>
-        {% for x in range(10): %}
-        <tr>
-            <td>{{x+1}}</td>
-            {% for y in range(18): %}    
-                {% if x == vef-1: %}
-                    <td style="background-color: gray;">{{ comparado[x][y] }}</td>
-                {% else: %}
-                    <td >{{ comparado[x][y] }}</td>
-                {% endif %}
-            {% endfor %}
-            {% if x == vef-1: %}
-                <td style="background-color: gray;">{{s[x]}}</td>
-            {% else: %}
-                <td>{{s[x]}}</td>
-            {% endif %}
-        </tr>
+        {% for x in range(contador): %}
+
+            <tr>
+                <td>{{x+1}}</td>
+                {% for y in range(18): %}    
+                    {% if x == vef-1: %}
+                        <td style="background-color: gray;">{{ compara2[x][y] }}</td>
+                    {% else: %}
+                        <td >{{ compara2[x][y] }}</td>
+                    {% endif %}
+                {% endfor %}
+               
+                    <td>{{s2[x]}}</td>
+               
+            </tr>
+            
         {% endfor %}
     </tbody>
 </table>
